@@ -5,7 +5,7 @@ function getComputerChoice()
     return choices[rIndex].toLowerCase();
 }
 
-function playRound(playerSelection)
+function playRound(playerSelection="")
 {
     const _playerChoice = String(prompt("Rock, Paper or Scissors?")).toLowerCase();
     const _computerChoice = getComputerChoice();
@@ -13,12 +13,40 @@ function playRound(playerSelection)
     {
         console.log(`You won the round :))\n Your Choice: ${_playerChoice}, PC's Choice: ${_computerChoice}`);
 
-        return 1;
+        return true;
     }
     else
     {
         console.log(`You lost the round:((\n Your Choice: ${_playerChoice}, PC's Choice: ${_computerChoice}`)
-        return 0;
+        return false;
     }
 }
 
+function game()
+{
+    let pScore = 0;
+    let cScore = 0;
+    for (let i = 0; i < 5; i++)
+    {
+        if (playRound())
+        {
+            pScore++;
+        }
+        else
+        {
+            cScore++;
+        }
+    }
+    if (pScore > cScore)
+    {
+        console.log(`You win the game!!\n Your score: ${pScore}, Computer's score: ${cScore}`);
+    }
+    else if (pScore < cScore)
+    {
+        console.log(`You lost the game..\n Your score: ${pScore}, Computer's score: ${cScore}`);
+    }
+    else
+    {
+        console.log("Draw!!");
+    }
+}
