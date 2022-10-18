@@ -1,3 +1,20 @@
+const buttons = document.getElementsByTagName("button");
+const body = document.body;
+
+
+
+buttons[0].addEventListener('click', function (e) {
+    playRound("rock");
+});
+buttons[1].addEventListener('click', function (e) {
+    playRound("paper");
+});
+buttons[2].addEventListener('click', function (e) {
+    playRound("scissors");
+});
+
+body.appendChild(results);
+
 function getComputerChoice()
 {
     let choices = ["rock", "paper", "scissors"];
@@ -5,9 +22,10 @@ function getComputerChoice()
     return choices[rIndex].toLowerCase();
 }
 
-function playRound(playerSelection="")
+function playRound(playerSelection)
 {
-    const _playerChoice = String(prompt("Rock, Paper or Scissors?")).toLowerCase();
+    // const _playerChoice = String(prompt("Rock, Paper or Scissors?")).toLowerCase();
+    const _playerChoice = playerSelection;
     const _computerChoice = getComputerChoice();
     if (_playerChoice == _computerChoice)
     {
