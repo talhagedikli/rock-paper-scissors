@@ -36,7 +36,7 @@ function playRound(playerSelection)
     }
     else
     {
-        results.textContent = (`You lost the round:((\n Your Choice: ${_playerChoice}, PC's Choice: ${_computerChoice}`)
+        results.textContent = (`You lost the round :((\n Your Choice: ${_playerChoice}, PC's Choice: ${_computerChoice}`)
         return false;
     }
 }
