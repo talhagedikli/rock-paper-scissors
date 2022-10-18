@@ -1,5 +1,6 @@
 const buttons = document.getElementsByTagName("button");
 const body = document.body;
+const results = document.createElement('div');
 
 
 
@@ -29,13 +30,13 @@ function playRound(playerSelection)
     const _computerChoice = getComputerChoice();
     if (_playerChoice == _computerChoice)
     {
-        console.log(`You won the round :))\n Your Choice: ${_playerChoice}, PC's Choice: ${_computerChoice}`);
+        results.textContent = (`You won the round :))\n Your Choice: ${_playerChoice}, PC's Choice: ${_computerChoice}`);
 
         return true;
     }
     else
     {
-        console.log(`You lost the round:((\n Your Choice: ${_playerChoice}, PC's Choice: ${_computerChoice}`)
+        results.textContent = (`You lost the round:((\n Your Choice: ${_playerChoice}, PC's Choice: ${_computerChoice}`)
         return false;
     }
 }
