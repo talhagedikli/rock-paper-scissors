@@ -1,14 +1,22 @@
 const buttons = document.getElementsByTagName("button");
+
 const body = document.body;
+/*
+
 body.style.display = 'flex';
 body.style.alignItems = 'center';
 body.style.justifyContent = 'center';
 body.style.flexDirection = 'column';
 body.style.gap = '30px';
+*/
+
 const results = document.createElement('div');
+const scores = document.createElement('div');
 
 let playerScore = 0;
 let compScore = 0;
+scores.textContent += '\nYour Score:' + playerScore.toString() + '  ---   Computer Score:' + compScore.toString();
+
 
 
 buttons[0].addEventListener('click', function (e) {
@@ -22,6 +30,7 @@ buttons[2].addEventListener('click', function (e) {
 });
 
 body.appendChild(results);
+body.appendChild(scores);
 
 function getComputerChoice()
 {
@@ -94,7 +103,7 @@ function playRound(playerSelection)
         playerScore = 0;
         compScore = 0;
     }
-    results.textContent += ' ' + playerScore.toString();
+    scores.textContent = '\nYour Score:' + playerScore.toString() + '  ---   Computer Score:' + compScore.toString();
 }
 
 
